@@ -2,6 +2,7 @@ import TituloPrincipal from './componentes/TituloPrincipal/TituloPrincipal'
 import Boton from './componentes/Boton/Boton'
 import ItemCount from './componentes/ItemCount/ItemCount'
 import NavBar from './componentes/NavBar/NavBar'
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 
 
 //JSX: EXTENSION DE JS. JavaScript Syntax eXtension.

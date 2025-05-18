@@ -7,13 +7,14 @@ const NavBar = () => {
 
   return (
     <header>
-        <h1>Tienda Marolio</h1>
+        <h1>Tienda Almacen</h1>
 
         <nav>
             <ul>
+              <li>Almacen</li>
                 <li>Lacteos</li>
                 <li>Bebidas</li>
-                <li>Almacen</li>
+               
             </ul>
 
         </nav>
