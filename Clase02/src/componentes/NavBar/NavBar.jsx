@@ -7,13 +7,13 @@ const NavBar = () => {
 
   return (
     <header>
-        <h1>Tienda Almacen</h1>
+        <h1>TechStore</h1>
 
         <nav>
             <ul>
-              <li>Almacen</li>
-                <li>Lacteos</li>
-                <li>Bebidas</li>
+              <li>Electrónicos</li>
+                <li>Computadoras</li>
+                <li>Accesorios</li>
                
             </ul>
 
