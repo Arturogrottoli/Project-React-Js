@@ -54,7 +54,10 @@ const App = () => {
       <NavBar/>
       <ItemListContainer/>
 
-      {/* <div>App</div>
+      {/*
+      Probar un nuevo ejemplo de componente
+      
+      <div>App</div>
       <h2>hola mundo</h2>
       <h3 style={colorFondo}>clase 2</h3>
       <h3 style={{color:"blue"}}>cualqueircosa</h3> */}
