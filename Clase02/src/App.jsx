@@ -63,7 +63,7 @@ const App = () => {
       <h3 style={{color:"blue"}}>cualqueircosa</h3> */}
 
       {/* <TituloPrincipal saludo = "Hola Comision" producto={celular}/>
-      <Boton texto="Comprar"/>
+      <Boton texto="Agregar al carrito"/>
       <Boton texto="Eliminar"/> */}
 
       {/* <ItemCount stock={15}/>
