@@ -1,456 +1,486 @@
-# 🚀 JavaScript Essentials for React - Clase 01
+# 🚀 JavaScript Esencial para React - Clase 01
 
-## 📚 Introduction
-This guide covers the 10 most important JavaScript concepts you need to master before diving into React. Each concept includes practical examples and explanations of why it's crucial for React development.
+## 📚 Introducción
+Esta guía cubre los 10 conceptos más importantes de JavaScript que necesitas dominar antes de sumergirte en React. Cada concepto incluye ejemplos prácticos y explicaciones de por qué es crucial para el desarrollo con React.
 
 ---
 
-## 🎯 1. Variables and Data Types
+## 🎯 1. Variables y Tipos de Datos
 
-### Why it matters for React:
-React components frequently work with different data types, and understanding how to declare and use variables is fundamental.
+### ¿Por qué es importante para React?
+Los componentes de React frecuentemente trabajan con diferentes tipos de datos, y entender cómo declarar y usar variables es fundamental.
+
+### 📖 Teoría:
+En JavaScript moderno (ES6+), tenemos tres formas de declarar variables: `var`, `let` y `const`. Cada una tiene un alcance (scope) diferente y comportamiento específico. Para React, es crucial entender estas diferencias porque afectan cómo se comportan las variables dentro de los componentes y funciones.
 
 ```javascript
-// ✅ Modern way (ES6+) - Recommended for React
-let name = "John";
-const age = 25;
-let isStudent = true;
+// ✅ Forma moderna (ES6+) - Recomendado para React
+let nombre = "Juan";
+const edad = 25;
+let esEstudiante = true;
 
-// ❌ Old way - Avoid in React
-var oldWay = "not recommended";
+// ❌ Forma antigua - Evitar en React
+var formaAntigua = "no recomendado";
 
-// 📝 Key points:
-// - Use 'const' for values that won't change
-// - Use 'let' for values that will be reassigned
-// - Avoid 'var' (function-scoped, can cause issues)
+// 📝 Puntos clave:
+// - Usa 'const' para valores que no cambiarán
+// - Usa 'let' para valores que se reasignarán
+// - Evita 'var' (alcance de función, puede causar problemas)
 ```
 
 ---
 
-## 🎯 2. Template Literals
+## 🎯 2. Template Literals (Plantillas Literales)
 
-### Why it matters for React:
-React components often need to combine static text with dynamic values, making template literals essential.
+### ¿Por qué es importante para React?
+Los componentes de React frecuentemente necesitan combinar texto estático con valores dinámicos, haciendo que las plantillas literales sean esenciales.
+
+### 📖 Teoría:
+Las template literals (plantillas literales) son una característica de ES6 que nos permite crear strings de manera más legible y flexible. En lugar de concatenar strings con el operador `+`, podemos usar backticks (`) y la sintaxis `${}` para insertar variables y expresiones directamente en el texto. Esto es especialmente útil en React para crear contenido dinámico de manera más limpia.
 
 ```javascript
-const userName = "Alice";
-const userAge = 30;
+const nombreUsuario = "Alicia";
+const edadUsuario = 30;
 
-// ✅ Modern way - Perfect for React
-const greeting = `Hello, ${userName}! You are ${userAge} years old.`;
+// ✅ Forma moderna - Perfecto para React
+const saludo = `¡Hola, ${nombreUsuario}! Tienes ${edadUsuario} años.`;
 
-// ❌ Old way - More verbose
-const oldGreeting = "Hello, " + userName + "! You are " + userAge + " years old.";
+// ❌ Forma antigua - Más verboso
+const saludoAntiguo = "¡Hola, " + nombreUsuario + "! Tienes " + edadUsuario + " años.";
 
-// 📝 Key points:
-// - Use backticks (`) instead of quotes
-// - Use ${} for variable interpolation
-// - Can include expressions: `${2 + 2}`
+// 📝 Puntos clave:
+// - Usa backticks (`) en lugar de comillas
+// - Usa ${} para interpolación de variables
+// - Puedes incluir expresiones: `${2 + 2}`
 ```
 
 ---
 
-## 🎯 3. Arrow Functions
+## 🎯 3. Arrow Functions (Funciones Flecha)
 
-### Why it matters for React:
-React components are functions, and arrow functions provide cleaner syntax and better handling of 'this' context.
+### ¿Por qué es importante para React?
+Los componentes de React son funciones, y las arrow functions proporcionan una sintaxis más limpia y mejor manejo del contexto 'this'.
+
+### 📖 Teoría:
+Las arrow functions (funciones flecha) son una característica de ES6 que simplifica la sintaxis de las funciones. Tienen un comportamiento especial con respecto al contexto `this` - lo heredan del contexto donde fueron definidas (lexical scoping), en lugar de crear su propio contexto. Esto es especialmente importante en React para evitar problemas con el contexto `this` en event handlers y callbacks.
 
 ```javascript
-// ✅ Arrow function - Perfect for React components
-const MyComponent = () => {
-    return <div>Hello World</div>;
+// ✅ Arrow function - Perfecto para componentes React
+const MiComponente = () => {
+    return <div>Hola Mundo</div>;
 };
 
-// ✅ Arrow function with parameters
-const addNumbers = (a, b) => a + b;
+// ✅ Arrow function con parámetros
+const sumarNumeros = (a, b) => a + b;
 
-// ✅ Arrow function with multiple lines
-const processData = (data) => {
-    const result = data.map(item => item * 2);
-    return result.filter(item => item > 10);
+// ✅ Arrow function con múltiples líneas
+const procesarDatos = (datos) => {
+    const resultado = datos.map(item => item * 2);
+    return resultado.filter(item => item > 10);
 };
 
-// ❌ Traditional function - More verbose
-function oldWay() {
-    return "Hello World";
+// ❌ Función tradicional - Más verbosa
+function formaAntigua() {
+    return "Hola Mundo";
 }
 
-// 📝 Key points:
-// - Shorter syntax
-// - Implicit return for single expressions
-// - Lexical 'this' binding (important for event handlers)
+// 📝 Puntos clave:
+// - Sintaxis más corta
+// - Return implícito para expresiones únicas
+// - Enlace léxico de 'this' (importante para event handlers)
 ```
 
 ---
 
-## 🎯 4. Destructuring
+## 🎯 4. Destructuring (Desestructuración)
 
-### Why it matters for React:
-React components receive props as objects, and destructuring makes it easy to extract specific values.
+### ¿Por qué es importante para React?
+Los componentes de React reciben props como objetos, y la desestructuración facilita extraer valores específicos.
+
+### 📖 Teoría:
+La desestructuración es una característica de ES6 que nos permite extraer valores de objetos y arrays de manera más concisa. En lugar de acceder a las propiedades una por una, podemos "desempaquetar" múltiples valores en una sola línea. Esto es especialmente útil en React para trabajar con props, state y otros objetos de manera más limpia y legible.
 
 ```javascript
-// ✅ Object destructuring - Essential for React props
-const user = { name: "John", age: 25, email: "john@example.com" };
-const { name, age } = user;
+// ✅ Desestructuración de objetos - Esencial para props de React
+const usuario = { nombre: "Juan", edad: 25, email: "juan@ejemplo.com" };
+const { nombre, edad } = usuario;
 
-// ✅ Array destructuring
-const colors = ["red", "green", "blue"];
-const [firstColor, secondColor] = colors;
+// ✅ Desestructuración de arrays
+const colores = ["rojo", "verde", "azul"];
+const [primerColor, segundoColor] = colores;
 
-// ✅ Function parameters destructuring
-const handleUser = ({ name, age }) => {
-    console.log(`${name} is ${age} years old`);
+// ✅ Desestructuración en parámetros de función
+const manejarUsuario = ({ nombre, edad }) => {
+    console.log(`${nombre} tiene ${edad} años`);
 };
 
-// ✅ React component example
-const UserCard = ({ name, age, email }) => {
+// ✅ Ejemplo de componente React
+const TarjetaUsuario = ({ nombre, edad, email }) => {
     return (
         <div>
-            <h2>{name}</h2>
-            <p>Age: {age}</p>
+            <h2>{nombre}</h2>
+            <p>Edad: {edad}</p>
             <p>Email: {email}</p>
         </div>
     );
 };
 
-// 📝 Key points:
-// - Extract multiple properties at once
-// - Can provide default values: { name = "Anonymous" }
-// - Rename variables: { name: userName }
+// 📝 Puntos clave:
+// - Extrae múltiples propiedades a la vez
+// - Puedes proporcionar valores por defecto: { nombre = "Anónimo" }
+// - Renombrar variables: { nombre: nombreUsuario }
 ```
 
 ---
 
-## 🎯 5. Spread and Rest Operators
+## 🎯 5. Spread y Rest Operators
 
-### Why it matters for React:
-React state updates often require creating new objects/arrays without mutating the original, making spread operator essential.
+### ¿Por qué es importante para React?
+Las actualizaciones de estado en React frecuentemente requieren crear nuevos objetos/arrays sin mutar el original, haciendo que el operador spread sea esencial.
+
+### 📖 Teoría:
+El operador spread (`...`) es una característica de ES6 que nos permite "expandir" elementos de arrays y propiedades de objetos. El operador rest es la misma sintaxis pero se usa para "recolectar" elementos restantes. En React, estos operadores son fundamentales para mantener la inmutabilidad del estado, que es un principio clave para el correcto funcionamiento de React.
 
 ```javascript
-// ✅ Spread operator (...) - Essential for React state
-const originalArray = [1, 2, 3];
-const newArray = [...originalArray, 4, 5]; // [1, 2, 3, 4, 5]
+// ✅ Operador spread (...) - Esencial para estado de React
+const arrayOriginal = [1, 2, 3];
+const nuevoArray = [...arrayOriginal, 4, 5]; // [1, 2, 3, 4, 5]
 
-const originalObject = { name: "John", age: 25 };
-const updatedObject = { ...originalObject, age: 26 }; // { name: "John", age: 26 }
+const objetoOriginal = { nombre: "Juan", edad: 25 };
+const objetoActualizado = { ...objetoOriginal, edad: 26 }; // { nombre: "Juan", edad: 26 }
 
-// ✅ Rest operator - Collect remaining items
-const [first, second, ...rest] = [1, 2, 3, 4, 5];
-console.log(rest); // [3, 4, 5]
+// ✅ Operador rest - Recolectar elementos restantes
+const [primero, segundo, ...resto] = [1, 2, 3, 4, 5];
+console.log(resto); // [3, 4, 5]
 
-// ✅ React state update example
-const updateUser = (user, newData) => {
-    return { ...user, ...newData }; // Merge without mutation
+// ✅ Ejemplo de actualización de estado en React
+const actualizarUsuario = (usuario, nuevosDatos) => {
+    return { ...usuario, ...nuevosDatos }; // Fusionar sin mutación
 };
 
-// 📝 Key points:
-// - Creates shallow copies (not deep copies)
-// - Essential for immutable state updates in React
-// - Can spread strings, arrays, and objects
+// 📝 Puntos clave:
+// - Crea copias superficiales (no copias profundas)
+// - Esencial para actualizaciones inmutables de estado en React
+// - Puede expandir strings, arrays y objetos
 ```
 
 ---
 
-## 🎯 6. Array Methods (map, filter, reduce)
+## 🎯 6. Métodos de Array (map, filter, reduce)
 
-### Why it matters for React:
-React components frequently render lists of data, making these array methods indispensable.
+### ¿Por qué es importante para React?
+Los componentes de React frecuentemente renderizan listas de datos, haciendo que estos métodos de array sean indispensables.
+
+### 📖 Teoría:
+Los métodos de array funcionales (`map`, `filter`, `reduce`) son fundamentales en JavaScript moderno y especialmente importantes en React. Estos métodos nos permiten transformar, filtrar y agregar datos de manera declarativa, sin mutar los arrays originales. En React, esto es crucial porque los componentes necesitan renderizar listas de elementos de manera eficiente y mantenible.
 
 ```javascript
-const users = [
-    { id: 1, name: "John", age: 25 },
-    { id: 2, name: "Jane", age: 30 },
-    { id: 3, name: "Bob", age: 22 }
+const usuarios = [
+    { id: 1, nombre: "Juan", edad: 25 },
+    { id: 2, nombre: "Ana", edad: 30 },
+    { id: 3, nombre: "Carlos", edad: 22 }
 ];
 
-// ✅ map() - Transform data (essential for React lists)
-const userNames = users.map(user => user.name);
-const userElements = users.map(user => (
-    <div key={user.id}>{user.name}</div>
+// ✅ map() - Transformar datos (esencial para listas en React)
+const nombresUsuarios = usuarios.map(usuario => usuario.nombre);
+const elementosUsuarios = usuarios.map(usuario => (
+    <div key={usuario.id}>{usuario.nombre}</div>
 ));
 
-// ✅ filter() - Filter data
-const adults = users.filter(user => user.age >= 18);
+// ✅ filter() - Filtrar datos
+const adultos = usuarios.filter(usuario => usuario.edad >= 18);
 
-// ✅ reduce() - Aggregate data
-const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+// ✅ reduce() - Agregar datos
+const edadTotal = usuarios.reduce((suma, usuario) => suma + usuario.edad, 0);
 
-// ✅ Chaining methods
-const result = users
-    .filter(user => user.age > 20)
-    .map(user => user.name)
+// ✅ Encadenar métodos
+const resultado = usuarios
+    .filter(usuario => usuario.edad > 20)
+    .map(usuario => usuario.nombre)
     .join(", ");
 
-// 📝 Key points:
-// - map() returns new array with same length
-// - filter() returns new array with filtered items
-// - reduce() returns single value
-// - Always use 'key' prop in React lists
+// 📝 Puntos clave:
+// - map() retorna nuevo array con la misma longitud
+// - filter() retorna nuevo array con elementos filtrados
+// - reduce() retorna un solo valor
+// - Siempre usa la prop 'key' en listas de React
 ```
 
 ---
 
-## 🎯 7. Conditional Rendering
+## 🎯 7. Renderizado Condicional
 
-### Why it matters for React:
-React components need to show different content based on conditions, making conditional logic crucial.
+### ¿Por qué es importante para React?
+Los componentes de React necesitan mostrar contenido diferente basado en condiciones, haciendo que la lógica condicional sea crucial.
+
+### 📖 Teoría:
+El renderizado condicional es una técnica fundamental en React que nos permite mostrar diferentes elementos de la interfaz basándonos en el estado de la aplicación o las props recibidas. JavaScript nos proporciona varias formas de implementar esta lógica: operadores ternarios, operadores lógicos y declaraciones if/else. En React, esto se traduce en mostrar o ocultar componentes, cambiar estilos, o renderizar contenido completamente diferente.
 
 ```javascript
-// ✅ Ternary operator - Most common in React
-const isLoggedIn = true;
-const greeting = isLoggedIn ? "Welcome back!" : "Please log in";
+// ✅ Operador ternario - Más común en React
+const estaLogueado = true;
+const saludo = estaLogueado ? "¡Bienvenido de vuelta!" : "Por favor inicia sesión";
 
-// ✅ Logical AND operator
-const showMessage = isLoggedIn && <div>Welcome back!</div>;
+// ✅ Operador lógico AND
+const mostrarMensaje = estaLogueado && <div>¡Bienvenido de vuelta!</div>;
 
-// ✅ Multiple conditions
-const getStatus = (user) => {
-    if (user.isAdmin) return "Admin";
-    if (user.isPremium) return "Premium";
+// ✅ Múltiples condiciones
+const obtenerEstado = (usuario) => {
+    if (usuario.esAdmin) return "Admin";
+    if (usuario.esPremium) return "Premium";
     return "Regular";
 };
 
-// ✅ React component example
-const UserGreeting = ({ user }) => {
+// ✅ Ejemplo de componente React
+const SaludoUsuario = ({ usuario }) => {
     return (
         <div>
-            {user ? (
-                <h1>Welcome, {user.name}!</h1>
+            {usuario ? (
+                <h1>¡Bienvenido, {usuario.nombre}!</h1>
             ) : (
-                <h1>Please log in</h1>
+                <h1>Por favor inicia sesión</h1>
             )}
             
-            {user?.isAdmin && <p>You have admin privileges</p>}
+            {usuario?.esAdmin && <p>Tienes privilegios de administrador</p>}
         </div>
     );
 };
 
-// 📝 Key points:
-// - Use ternary for if/else scenarios
-// - Use && for simple conditions
-// - Use optional chaining (?.) for safe property access
+// 📝 Puntos clave:
+// - Usa ternario para escenarios if/else
+// - Usa && para condiciones simples
+// - Usa optional chaining (?.) para acceso seguro a propiedades
 ```
 
 ---
 
-## 🎯 8. Event Handling
+## 🎯 8. Manejo de Eventos
 
-### Why it matters for React:
-React components need to respond to user interactions, making event handling fundamental.
+### ¿Por qué es importante para React?
+Los componentes de React necesitan responder a las interacciones del usuario, haciendo que el manejo de eventos sea fundamental.
+
+### 📖 Teoría:
+El manejo de eventos en React es similar al JavaScript tradicional, pero con algunas diferencias importantes. React usa camelCase para los nombres de eventos (onClick en lugar de onclick), y los event handlers reciben un objeto de evento sintético que es una envoltura del evento nativo del navegador. Esto nos permite manejar las interacciones del usuario de manera consistente y eficiente, manteniendo el código limpio y organizado.
 
 ```javascript
-// ✅ Basic event handler
-const handleClick = () => {
-    console.log("Button clicked!");
+// ✅ Event handler básico
+const manejarClick = () => {
+    console.log("¡Botón clickeado!");
 };
 
-// ✅ Event handler with parameters
-const handleUserClick = (userId) => {
-    console.log(`User ${userId} clicked`);
+// ✅ Event handler con parámetros
+const manejarClickUsuario = (idUsuario) => {
+    console.log(`Usuario ${idUsuario} clickeó`);
 };
 
-// ✅ Event handler with event object
-const handleInputChange = (event) => {
-    console.log("New value:", event.target.value);
+// ✅ Event handler con objeto evento
+const manejarCambioInput = (evento) => {
+    console.log("Nuevo valor:", evento.target.value);
 };
 
-// ✅ React component example
-const Button = () => {
-    const handleClick = (event) => {
-        event.preventDefault(); // Prevent default behavior
-        console.log("Button clicked!");
+// ✅ Ejemplo de componente React
+const Boton = () => {
+    const manejarClick = (evento) => {
+        evento.preventDefault(); // Prevenir comportamiento por defecto
+        console.log("¡Botón clickeado!");
     };
 
     return (
-        <button onClick={handleClick}>
-            Click me
+        <button onClick={manejarClick}>
+            Hazme click
         </button>
     );
 };
 
-// 📝 Key points:
-// - Use camelCase for event names (onClick, onChange)
-// - Event object is automatically passed
-// - Use arrow functions to preserve 'this' context
+// 📝 Puntos clave:
+// - Usa camelCase para nombres de eventos (onClick, onChange)
+// - El objeto evento se pasa automáticamente
+// - Usa arrow functions para preservar el contexto 'this'
 ```
 
 ---
 
-## 🎯 9. Async/Await and Promises
+## 🎯 9. Async/Await y Promesas
 
-### Why it matters for React:
-React components often need to fetch data from APIs, making async programming essential.
+### ¿Por qué es importante para React?
+Los componentes de React frecuentemente necesitan obtener datos de APIs, haciendo que la programación asíncrona sea esencial.
+
+### 📖 Teoría:
+Las promesas y async/await son características fundamentales de JavaScript moderno para manejar operaciones asíncronas. Una promesa representa un valor que puede estar disponible ahora, en el futuro, o nunca. Async/await es una forma más elegante de trabajar con promesas, permitiéndonos escribir código asíncrono que se ve y se comporta como código síncrono. En React, esto es crucial para obtener datos de APIs, manejar formularios, y realizar operaciones que requieren tiempo.
 
 ```javascript
-// ✅ Promise basics
-const fetchData = () => {
+// ✅ Conceptos básicos de promesas
+const obtenerDatos = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Data fetched successfully!");
+            resolve("¡Datos obtenidos exitosamente!");
         }, 1000);
     });
 };
 
-// ✅ Async/await - Modern way
-const getData = async () => {
+// ✅ Async/await - Forma moderna
+const obtenerDatosAsync = async () => {
     try {
-        const result = await fetchData();
-        console.log(result);
-        return result;
+        const resultado = await obtenerDatos();
+        console.log(resultado);
+        return resultado;
     } catch (error) {
         console.error("Error:", error);
     }
 };
 
-// ✅ Fetch API example
-const fetchUsers = async () => {
+// ✅ Ejemplo con Fetch API
+const obtenerUsuarios = async () => {
     try {
-        const response = await fetch('https://api.example.com/users');
-        const users = await response.json();
-        return users;
+        const respuesta = await fetch('https://api.ejemplo.com/usuarios');
+        const usuarios = await respuesta.json();
+        return usuarios;
     } catch (error) {
-        console.error("Failed to fetch users:", error);
+        console.error("Error al obtener usuarios:", error);
         return [];
     }
 };
 
-// ✅ React component example
-const UserList = () => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
+// ✅ Ejemplo de componente React
+const ListaUsuarios = () => {
+    const [usuarios, setUsuarios] = useState([]);
+    const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
-        const loadUsers = async () => {
-            setLoading(true);
-            const data = await fetchUsers();
-            setUsers(data);
-            setLoading(false);
+        const cargarUsuarios = async () => {
+            setCargando(true);
+            const datos = await obtenerUsuarios();
+            setUsuarios(datos);
+            setCargando(false);
         };
         
-        loadUsers();
+        cargarUsuarios();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (cargando) return <div>Cargando...</div>;
     
     return (
         <div>
-            {users.map(user => (
-                <div key={user.id}>{user.name}</div>
+            {usuarios.map(usuario => (
+                <div key={usuario.id}>{usuario.nombre}</div>
             ))}
         </div>
     );
 };
 
-// 📝 Key points:
-// - async functions always return promises
-// - await can only be used inside async functions
-// - Always handle errors with try/catch
-// - Use loading states in React components
+// 📝 Puntos clave:
+// - Las funciones async siempre retornan promesas
+// - await solo puede usarse dentro de funciones async
+// - Siempre maneja errores con try/catch
+// - Usa estados de carga en componentes React
 ```
 
 ---
 
-## 🎯 10. Modules (import/export)
+## 🎯 10. Módulos (import/export)
 
-### Why it matters for React:
-React applications are built with multiple components and utilities, making module system essential.
+### ¿Por qué es importante para React?
+Las aplicaciones de React se construyen con múltiples componentes y utilidades, haciendo que el sistema de módulos sea esencial.
+
+### 📖 Teoría:
+El sistema de módulos ES6 nos permite dividir nuestro código en archivos separados y reutilizables. Cada archivo puede exportar funciones, clases, objetos o valores, y otros archivos pueden importarlos para usarlos. Esto es fundamental en React porque nos permite organizar nuestros componentes en archivos separados, crear utilidades reutilizables, y mantener un código limpio y modular. Los módulos también permiten tree-shaking, una técnica de optimización que elimina código no utilizado.
 
 ```javascript
-// ✅ Named exports
-export const add = (a, b) => a + b;
-export const subtract = (a, b) => a - b;
+// ✅ Exportaciones nombradas
+export const sumar = (a, b) => a + b;
+export const restar = (a, b) => a - b;
 
-// ✅ Default export
-const Calculator = {
-    add: (a, b) => a + b,
-    subtract: (a, b) => a - b
+// ✅ Exportación por defecto
+const Calculadora = {
+    sumar: (a, b) => a + b,
+    restar: (a, b) => a - b
 };
-export default Calculator;
+export default Calculadora;
 
-// ✅ Named imports
-import { add, subtract } from './math.js';
+// ✅ Importaciones nombradas
+import { sumar, restar } from './matematicas.js';
 
-// ✅ Default import
-import Calculator from './calculator.js';
+// ✅ Importación por defecto
+import Calculadora from './calculadora.js';
 
-// ✅ Mixed imports
-import Calculator, { add, subtract } from './math.js';
+// ✅ Importaciones mixtas
+import Calculadora, { sumar, restar } from './matematicas.js';
 
-// ✅ React component example
-// MyComponent.jsx
+// ✅ Ejemplo de componente React
+// MiComponente.jsx
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
-import { formatDate } from '../utils/dateUtils';
+import { Boton } from './Boton';
+import { formatearFecha } from '../utils/utilidadesFecha';
 
-const MyComponent = () => {
-    const [data, setData] = useState(null);
+const MiComponente = () => {
+    const [datos, setDatos] = useState(null);
     
     useEffect(() => {
-        // Component logic
+        // Lógica del componente
     }, []);
     
     return (
         <div>
-            <Button onClick={() => console.log('clicked')} />
-            <p>{formatDate(new Date())}</p>
+            <Boton onClick={() => console.log('clickeado')} />
+            <p>{formatearFecha(new Date())}</p>
         </div>
     );
 };
 
-export default MyComponent;
+export default MiComponente;
 
-// 📝 Key points:
-// - Use named exports for multiple items
-// - Use default export for main component/function
-// - Import React hooks individually for tree-shaking
-// - Use relative paths for local imports
+// 📝 Puntos clave:
+// - Usa exportaciones nombradas para múltiples elementos
+// - Usa exportación por defecto para el componente/función principal
+// - Importa hooks de React individualmente para tree-shaking
+// - Usa rutas relativas para importaciones locales
 ```
 
 ---
 
-## 🎓 Practice Exercises
+## 🎓 Ejercicios de Práctica
 
-Try these exercises to reinforce your understanding:
+Intenta estos ejercicios para reforzar tu comprensión:
 
-1. **Variables & Template Literals**: Create a function that takes a user object and returns a greeting using template literals.
+1. **Variables & Template Literals**: Crea una función que tome un objeto usuario y retorne un saludo usando template literals.
 
-2. **Arrow Functions & Destructuring**: Write an arrow function that destructures a product object and returns a formatted string.
+2. **Arrow Functions & Destructuring**: Escribe una arrow function que desestructure un objeto producto y retorne una cadena formateada.
 
-3. **Array Methods**: Create a function that filters users by age, maps their names, and joins them into a string.
+3. **Métodos de Array**: Crea una función que filtre usuarios por edad, mapee sus nombres y los una en una cadena.
 
-4. **Conditional Rendering**: Write a component that shows different content based on user authentication status.
+4. **Renderizado Condicional**: Escribe un componente que muestre contenido diferente basado en el estado de autenticación del usuario.
 
-5. **Event Handling**: Create a form component with input validation and submission handling.
+5. **Manejo de Eventos**: Crea un componente de formulario con validación de entrada y manejo de envío.
 
-6. **Async/Await**: Build a function that fetches data from a mock API and handles loading/error states.
+6. **Async/Await**: Construye una función que obtenga datos de una API mock y maneje estados de carga/error.
 
 ---
 
-## 🔗 Additional Resources
+## 🔗 Recursos Adicionales
 
-- [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-- [ES6 Features](https://es6-features.org/)
-- [React Official Documentation](https://react.dev/)
+- [Guía de JavaScript MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide)
+- [Características de ES6](https://es6-features.org/)
+- [Documentación Oficial de React](https://react.dev/)
 - [JavaScript.info](https://javascript.info/)
 
 ---
 
-## 📝 Notes for Instructors
+## 📝 Notas para Instructores
 
-**Key Teaching Points:**
-- Emphasize the transition from vanilla JS to React
-- Show how each concept applies in React components
-- Use real-world examples that students will encounter
-- Practice with small exercises before moving to React
+**Puntos Clave de Enseñanza:**
+- Enfatiza la transición de JavaScript vanilla a React
+- Muestra cómo cada concepto se aplica en componentes React
+- Usa ejemplos del mundo real que los estudiantes encontrarán
+- Practica con ejercicios pequeños antes de pasar a React
 
-**Common Student Challenges:**
-- Understanding the difference between `let`, `const`, and `var`
-- Grasping the concept of immutability with spread operator
-- Managing async operations in React components
-- Proper use of array methods for rendering lists
+**Desafíos Comunes de los Estudiantes:**
+- Entender la diferencia entre `let`, `const` y `var`
+- Comprender el concepto de inmutabilidad con el operador spread
+- Manejar operaciones asíncronas en componentes React
+- Uso apropiado de métodos de array para renderizar listas
 
-**Assessment Criteria:**
-- Can explain each concept in their own words
-- Can write working code examples for each concept
-- Can identify when to use each concept in React scenarios
-- Can debug common issues related to each concept 
+**Criterios de Evaluación:**
+- Puede explicar cada concepto con sus propias palabras
+- Puede escribir ejemplos de código funcionales para cada concepto
+- Puede identificar cuándo usar cada concepto en escenarios de React
+- Puede debuggear problemas comunes relacionados con cada concepto 
