@@ -1,3 +1,20 @@
+Instalacion de ReactJs
+
+Abrir consola y revisar las versiones de npm y node
+
+node -v
+npm -v
+
+Utilizamos vite, entonces el comando va a ser el siguiente
+
+npm create vite@latest my-app
+
+Cual elijo? Javascript.
+
+cd my-app
+npm install
+npm run dev
+
 Introduccion a ReactJs
 # 🚀 JavaScript Esencial para React - Clase 01
 
