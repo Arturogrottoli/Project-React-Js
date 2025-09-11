@@ -1,5 +1,5 @@
 // ===============================
-// 🚀 CLASE 2 - React + Vite
+// 🚀 CLASE 2 - React + Vite (Primer entrega)
 // ===============================
 //
 // En esta clase vemos fundamentos de JS moderno,
