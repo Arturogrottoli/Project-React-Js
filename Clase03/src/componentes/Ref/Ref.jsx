@@ -1,17 +1,16 @@
 import React from 'react'
 
-//useRef es un hook que nos permite crear una referencia mutable que puede ser actualiza sin provocar una nueva renderizacion del componente.
-
-//Ejemplo: almacenamos la cantidad de productos comprados pero no lo mostramos por pantalla:
-
+// useRef crea una referencia mutable que NO provoca re-render al cambiar.
+// Útil para guardar valores entre renders o acceder al DOM.
+// Ejemplo: contamos compras usando ref (se ve en consola, no en UI).
 import { useRef } from 'react'
 
 const Ref = () => {
 
     const cantidadProductos = useRef(0)
 
-    //Este Hook siempre me retorna un objeto que tiene una propiedad llamada "current" la cual vamos a mutando con informacion
-
+    // El objeto retornado por useRef tiene la propiedad .current.
+    // Mutar .current NO vuelve a renderizar el componente.
     function agregarAlCarrito() {
         cantidadProductos.current = cantidadProductos.current + 1
         console.log(cantidadProductos.current)
@@ -19,8 +18,9 @@ const Ref = () => {
 
   return (
     <div>
-        <p>Productos Marolio comprados:{cantidadProductos.current}</p>
-        <button onClick={agregarAlCarrito}>Comprar</button>
+        {/* Mostrar .current aquí no se actualizará sin estado */}
+        <p>Productos Marolio comprados: {cantidadProductos.current}</p>
+        <button type="button" onClick={agregarAlCarrito}>Comprar</button>
     </div>
   )
 }
