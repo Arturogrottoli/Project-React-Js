@@ -4,6 +4,7 @@ import ComponenteX from './componentes/ComponenteX/ComponenteX'
 import Contador from './componentes/Contador/Contador'
 import Categorias from './componentes/Categorias/Categorias'
 import Ref from './componentes/Ref/Ref'
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 
 
 //caracteristicas:
@@ -36,7 +37,10 @@ const App = () => {
         {/* <Contador/> */}
 
         {/* <Categorias/> */}
-        <Ref/>
+        {/* <Ref/> */}
+        
+        {/* Actividades Prácticas - Clase 4 */}
+        <ItemDetailContainer/>
 
     </div>
   )
