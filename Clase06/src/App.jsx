@@ -3,7 +3,7 @@ import Abuelo from './componentes/Abuelo/Abuelo'
 import { Contexto } from './context/context'
 
 //El contexto tiene 3 partes:
-//el contexto en si
+//el contexto en si,
 //el proveedor de contexto, es un compoentne que envuelve a toda la app habilitandola para que envie datos
 //el consumidor de contexto, e sun componetne cualquiera que accede a esos datos globales
 
