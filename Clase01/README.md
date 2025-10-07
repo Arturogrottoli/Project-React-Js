@@ -1,4 +1,4 @@
-Instalacion de ReactJs
+Instalacion de ReactJs con Vite
 
 Abrir consola y revisar las versiones de npm y node
 
