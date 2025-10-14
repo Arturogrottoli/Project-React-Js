@@ -1,15 +1,3 @@
-// ================================================
-// 📚 CLASE DE REACT - ARCHIVO App.jsx
-// ================================================
-
-// 🔹 Importamos los componentes que creamos en la carpeta "componentes"
-// Cada componente representa una parte de la interfaz de usuario (UI)
-import TituloPrincipal from './componentes/TituloPrincipal/TituloPrincipal'
-import Boton from './componentes/Boton/Boton'
-import ItemCount from './componentes/ItemCount/ItemCount'
-import NavBar from './componentes/NavBar/NavBar'
-import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
-
 
 // ===============================================================
 // 2.1 FUNDAMENTOS DE JAVASCRIPT MODERNO (que se usan en React)
@@ -116,6 +104,21 @@ import ItemListContainer from './componentes/ItemListContainer/ItemListContainer
 
 
 
+
+// ================================================
+// 📚 CLASE DE REACT - ARCHIVO App.jsx
+// ================================================
+
+// 🔹 Importamos los componentes que creamos en la carpeta "componentes"
+// Cada componente representa una parte de la interfaz de usuario (UI)
+import TituloPrincipal from './componentes/TituloPrincipal/TituloPrincipal'
+import Boton from './componentes/Boton/Boton'
+import ItemCount from './componentes/ItemCount/ItemCount'
+import NavBar from './componentes/NavBar/NavBar'
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
+
+
+
 // ===============================================================
 // 🛠️ DEFINICIÓN DEL COMPONENTE PRINCIPAL (App)
 // ===============================================================
@@ -163,6 +166,8 @@ const App = () => {
       <Boton texto="Eliminar"/> 
       */}
 
+
+
       {/* 
       🔹 COMPONENTES CON ESTADO (ejemplo de contador de stock)
 
@@ -176,3 +181,6 @@ const App = () => {
 
 // Exportamos el componente para poder usarlo en index.jsx
 export default App
+
+
+
