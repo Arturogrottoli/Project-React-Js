@@ -1,0 +1,70 @@
+// 🔥 CONEXIÓN DE FIREBASE CON REACT
+// =====================================
+// Este archivo muestra paso a paso cómo conectar una base de datos Firestore
+// a un proyecto de React ya creado.
+
+// PASO 1: ENTRAR A FIREBASE
+// - Ir a https://firebase.google.com
+// - Iniciar sesión con una cuenta de Google
+// - Entrar a “Consola de Firebase”
+
+// PASO 2: CREAR UN PROYECTO
+// - Hacer clic en “Agregar proyecto”
+// - Ponerle un nombre (por ejemplo: e-commerce)
+// - Desactivar Google Analytics si no lo necesitamos
+// - Esperar a que se cree el proyecto
+
+// PASO 3: AGREGAR FIREBASE A UNA APP WEB
+// - Dentro del proyecto, hacer clic en el icono </> “Web”
+// - Ponerle un nombre a la app (por ejemplo: react-ecommerce)
+// - Firebase mostrará una configuración con las claves del proyecto
+//   (esto es lo que se llama firebaseConfig)
+
+// PASO 4: INSTALAR FIREBASE EN REACT
+// En la terminal del proyecto React, ejecutar:
+// npm install firebase
+
+// PASO 5: CREAR EL ARCHIVO DE CONFIGURACIÓN
+// Crear un archivo en src llamado firebaseConfig.js (o FirebaseSetup.jsx)
+// y pegar el siguiente código 👇
+
+
+// Importaciones necesarias de Firebase
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection } from "firebase/firestore";
+
+// Configuración del proyecto Firebase (esta info la da Firebase al crear la app)
+const firebaseConfig = {
+  apiKey: "AIzaSyDkDnZ41ocLNQHz9aHE-cGBO06ReiDMNXg",
+  authDomain: "e-commerce-c9e50.firebaseapp.com",
+  projectId: "e-commerce-c9e50",
+  storageBucket: "e-commerce-c9e50.appspot.com",
+  messagingSenderId: "710720671962",
+  appId: "1:710720671962:web:e7c0cf299a82eaf90f95e3"
+};
+
+// Inicializar Firebase
+const app = initializeApp(firebaseConfig);
+
+// Conectar Firestore (la base de datos)
+const db = getFirestore(app);
+
+// Crear referencias a las colecciones
+export const coleccionProductos = collection(db, "productos");
+export const coleccionOrdenes = collection(db, "ordenes");
+
+// PASO 6: CREAR LA BASE DE DATOS EN FIREBASE
+// - En el panel izquierdo de Firebase, ir a “Firestore Database”
+// - Hacer clic en “Crear base de datos”
+// - Elegir “Modo de prueba”
+// - Crear dos colecciones: “productos” y “ordenes”
+// - Dentro de cada colección se pueden agregar documentos (por ejemplo productos)
+
+// PASO 7: PROBAR LA CONEXIÓN
+// En cualquier componente de React se puede importar y usar así:
+//
+// import { coleccionProductos } from "./firebaseConfig";
+// console.log(coleccionProductos);
+
+// PASO 8: ¡LISTO!
+// Ya tenés tu proyecto React conectado con Firestore 🔥
