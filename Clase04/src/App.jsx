@@ -6,15 +6,37 @@ import Categorias from './componentes/Categorias/Categorias'
 import Ref from './componentes/Ref/Ref'
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 
+/*
+=== TEORÍA FUNDAMENTAL DE REACT - CLASE 4 ===
 
-//caracteristicas:
-//Renderizan un unico elemento
-//pueden pasar props. Se pueden pasar:
-//datos primitivos (string, number, boolean, null)
-//obejtos y arreglos(arrays)
-//funciones
+🎯 CONCEPTOS CLAVE DE ESTA CLASE:
 
-//y ahora se suman los CHILDREN
+1. CHILDREN (Props especiales):
+   - Los componentes pueden recibir contenido entre sus etiquetas de apertura y cierre
+   - Este contenido se pasa automáticamente como prop "children"
+   - Permite crear componentes reutilizables y flexibles
+   - Ejemplo: <Articulos>Contenido aquí</Articulos> → children = "Contenido aquí"
+
+2. CICLO DE VIDA Y EFECTOS SECUNDARIOS:
+   - useEffect: Hook para manejar efectos secundarios (API calls, timers, DOM manipulation)
+   - Se ejecuta después del renderizado
+   - Array de dependencias controla cuándo se ejecuta
+   - Cleanup: función de limpieza para evitar memory leaks
+
+3. REFS (useRef):
+   - Referencias mutables que no causan re-renderizado
+   - Acceso directo al DOM
+   - Almacenar valores que cambian pero no necesitan actualizar la UI
+   - Persisten entre renderizados
+
+4. CARACTERÍSTICAS DE COMPONENTES:
+   - Renderizan un único elemento (Fragment o div wrapper)
+   - Pueden recibir props de diferentes tipos:
+     * Datos primitivos (string, number, boolean, null)
+     * Objetos y arrays
+     * Funciones (event handlers)
+     * CHILDREN (contenido entre etiquetas)
+*/
 
 
 
