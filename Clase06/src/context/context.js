@@ -4,7 +4,7 @@ import { createContext } from "react";
 
 // 1️⃣ Creamos el contexto y lo exportamos
 // Contexto = canal por donde viajarán los datos entre componentes
-// Le ponemos null como valor inicial (podría ser cualquier valor)
+// Le ponemos null como valor inicial (podría ser cualquier valor,o una variable)
 export const Contexto = createContext(null);
 
 // ------------------------------------------------------------

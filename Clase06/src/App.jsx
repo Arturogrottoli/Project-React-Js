@@ -7,6 +7,32 @@ import Abuelo from './componentes/Abuelo/Abuelo'
 // Importamos el contexto que creamos en otra carpeta (en ./context/context.js)
 import { Contexto } from './context/context'
 
+// ------------------------- PASOS PARA IMPLEMENTAR CONTEXT (RESUMEN) -------------------------
+//
+// PASO 1: Crear context.js
+//    → Crear carpeta 'context' → Crear archivo 'context.js'
+//    → Importar createContext desde React
+//    → Crear y exportar: export const Contexto = createContext(null)
+//
+// PASO 2: Crear componentes (Abuelo, Padre, Nieto)
+//    → Crear estructura de componentes que necesitan compartir datos
+//
+// PASO 3: En App.jsx - Importar Contexto
+//    → import { Contexto } from './context/context'
+//
+// PASO 4: En App.jsx - Definir datos a compartir
+//    → const herencia = { efectivo: 10000000, propiedades: 6, ... }
+//
+// PASO 5: En App.jsx - Envolver con Provider
+//    → <Contexto.Provider value={herencia}>
+//    →     <Abuelo />
+//    → </Contexto.Provider>
+//
+// PASO 6: En componentes hijos - Usar useContext
+//    → import { useContext } from 'react'
+//    → import { Contexto } from '../../context/context'
+//    → const herencia = useContext(Contexto)
+//
 
 // ------------------------- EXPLICACIÓN GENERAL -------------------------
 //
