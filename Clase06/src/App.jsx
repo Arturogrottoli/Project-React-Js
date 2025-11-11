@@ -15,6 +15,9 @@ import { Contexto } from './context/context'
 // no es eficiente pasarlo manualmente de un componente a otro con props.
 //
 // Para eso existe el *Context API* de React.
+// (Atención: "API" en este caso no tiene nada que ver con consumir o crear
+// una API externa. El Context API es solo una herramienta interna de React
+// para compartir datos entre componentes de la aplicación.)
 //
 // El Contexto tiene tres partes:
 // 1️⃣ El contexto en sí (creado con React.createContext())
