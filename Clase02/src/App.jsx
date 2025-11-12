@@ -133,7 +133,7 @@ const App = () => {
     <>
       {/* PREENTREGA: mostrar la barra de navegación y la lista de productos */}
       <NavBar/>
-      <ItemListContainer/>
+      <ItemListContainer greeting="¡Bienvenido a mi tienda online!" />
 
       {/* 
       🔹 OTROS EJEMPLOS (descomentar para probar)
