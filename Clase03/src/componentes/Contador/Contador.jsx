@@ -1,33 +1,46 @@
 import React, { useState, useEffect } from 'react'
 
-// Demuestra estado (useState) y efectos secundarios (useEffect):
-// - Estado: valor que cambia y re-renderiza el componente.
-// - Efecto: sincroniza el título del documento con el valor del contador.
+// ------------------------------------------------------------
+// useState → permite crear y manejar un "estado" en un componente.
+// El estado es un dato que puede cambiar con el tiempo
+// y cada vez que cambia, React vuelve a renderizar el componente.
+//
+// useEffect → permite ejecutar efectos secundarios (acciones externas al render).
+// Ejemplo: actualizar el título del documento, hacer una petición a una API, etc.
+// ------------------------------------------------------------
 const Contador = () => {
 
-    const [contador, setContador] = useState(1)
+  // useState devuelve un array con dos elementos:
+  // 1️⃣ la variable de estado (contador)
+  // 2️⃣ la función que actualiza ese estado (setContador)
+  const [contador, setContador] = useState(1)
 
-    // useEffect recibe: (callback, [dependencias]).
-    // Se ejecuta tras el render y cuando cambian las dependencias.
-    useEffect(()=>{
-        document.title = `Contador: ${contador}`
-    },[contador])
+  // useEffect recibe dos parámetros:
+  // - Una función (callback) que se ejecuta después del render.
+  // - Un array de dependencias que indica cuándo debe ejecutarse.
+  //
+  // En este caso, cada vez que cambia "contador", el título del documento se actualiza.
+  useEffect(() => {
+    document.title = `Contador: ${contador}`
+  }, [contador])
 
-    const sumarContador = () =>{
-        // Actualización funcional: evita leer un estado potencialmente obsoleto
-        setContador((c) => c + 1)
-    }
+  // Función para sumar al contador.
+  // Usamos una función dentro de setContador para trabajar
+  // con el valor más reciente del estado.
+  const sumarContador = () => {
+    setContador((c) => c + 1)
+  }
 
-    const restarContador = () => {
-        setContador((c) => c - 1)
-    }
+  // Función para restar al contador.
+  const restarContador = () => {
+    setContador((c) => c - 1)
+  }
 
   return (
     <div>
-        <button type="button" onClick={sumarContador}> + </button>
-        {contador}
-        <button type="button" onClick={restarContador}> - </button>
-
+      <button type="button" onClick={sumarContador}> + </button>
+      {contador}
+      <button type="button" onClick={restarContador}> - </button>
     </div>
   )
 }
