@@ -89,20 +89,6 @@
 
 
 
-// ===============================================================
-// 2.7 RESUMEN DE APOYO
-// ===============================================================
-
-// 🔑 JSX: mezcla HTML + JS
-// 🔑 Todo componente debe devolver 1 solo elemento
-// 🔑 Props: datos que viajan del padre al hijo
-// 🔑 useState: manejar valores dinámicos
-// 🔑 Reglas de JSX:
-//    1) Siempre cerrar etiquetas <img />
-//    2) Un solo return por componente
-//    3) Antes del return podemos usar lógica JS
-
-
 
 
 // ================================================
