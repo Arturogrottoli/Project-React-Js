@@ -1,23 +1,5 @@
-import React from 'react'
-import Articulos from './componentes/Articulos/Articulos'
-import ComponenteX from './componentes/ComponenteX/ComponenteX'
-import Contador from './componentes/Contador/Contador'
-import Categorias from './componentes/Categorias/Categorias'
-import Ref from './componentes/Ref/Ref'
-
-
-// Características de los componentes (repaso rápido):
-// - Renderizan un único árbol/elemento raíz
-// - Pueden recibir props: datos primitivos, objetos/arreglos y funciones
-// - Pueden anidar contenido mediante children
-
-// En esta clase mostramos:
-// - Props y children (Articulos + ComponenteX)
-// - Estado y efectos (Contador, Categorias)
-// - useRef para valores mutables no reactivos (Ref)
-
-
-
+import NavBar from './componentes/NavBar/NavBar'
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 
 
 const App = () => {
